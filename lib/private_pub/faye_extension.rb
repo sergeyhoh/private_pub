@@ -10,7 +10,6 @@ module PrivatePub
       elsif message["channel"] !~ %r{^/meta/}
         authenticate_publish(message)
       end
-      message['data']['channel'] ||= message['channel'] if message['data']
       callback.call(message)
     end
 
